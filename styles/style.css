@@ -16,6 +16,7 @@ html {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  display: flex;
 }
 
 h1,
@@ -37,6 +38,16 @@ ol {
   list-style: none;
 }
 
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 /* Кастомный скроллбар */
 .custom-scrollbar::-webkit-scrollbar {
   width: 4px;
@@ -47,5 +58,214 @@ ol {
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 711px 399px;
+  gap: 30px;
+  width: 1140px;
+  align-self: center;
+  align-items: end;
+}
+
+.result__video-container {
+  margin-bottom: 16px;
+  width: 711px;
+  height: 386px;
+}
+
+.result__video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.search-form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-form__fieldset {
+  border: none;
+}
+
+.search-form__fieldset-title {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.search-form__label {
+  display: flex;
+  width: fit-content;
+}
+
+.search-form__label:focus {
+  outline: none;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #ffffff;
+  outline-offset: 2px;
+}
+
+.search-form__label input {
+  width: 225px;
+  height: 27px;
+  font-family: 'Fira Sans Condensed', serif;
+  font-size: 18px;
+  color: #ffffffb2;
+  border: none;
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  background-color: #1b1919;
+  appearance: none;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 0 15px;
+}
+
+.search-form__pseudo-checkbox {
+  position: relative;
+  width: 19px;
+  height: 19px;
+  border: 1px solid #ffffff;
+  margin: auto;
+  margin-right: 5.5px;
+}
+.search-form__checkbox:checked + span::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 15px;
+  height: 15px;
+  right: 1px;
+  top: 1px;
+  background-color: #ffffff;
+}
+.search-form__checkbox-list .search-form__label:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.button {
+  color: #ffffff;
+  font-family: 'Fira Sans Condensed', serif;
+  font-size: 18px;
+  font-weight: 700;
+  background-color: #1b1919;
+  border: 1px solid #ffffff;
+  cursor: pointer;
+}
+.button:hover {
+  text-decoration: underline;
+}
+.button:active {
+  background-color: #545050;
+  text-decoration: none;
+}
+.button:focus-visible {
+  outline: 1px solid #ffffff;
+  outline-offset: 2px;
+}
+.search-form__submit-button {
+  height: 34px;
+  padding: 6px 73.5px;
+  align-self: end;
+}
+
+.content__details {
+  width: 100%;
+  height: 100%;
+}
+
+.content__details .title {
+  margin-bottom: 26px;
+  font-family: 'Oswald', serif;
+  text-transform: uppercase;
+  font-size: 75px;
+  font-weight: 700;
+  line-height: 94%;
+}
+
+.content__accent {
+  opacity: 20%;
+}
+
+.content__list-container {
+  height: 298px;
+  overflow: auto;
+}
+
+.content__list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px 0;
+}
+
+.content__list-item {
+  padding: 0 3px;
+}
+
+.content__list-item:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.content__list-item:focus-visible {
+  outline: 1px solid #ffffff;
+  outline-offset: 2px;
+}
+
+.content__card-link {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.content__video-card {
+  display: flex;
+  align-items: start;
+  width: 390px;
+  height: 103px;
+}
+.content__video-card-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: right;
+}
+.content__video-card-description-container {
+  width: 196px;
+  flex-grow: 1;
+}
+.content__video-card-title {
+  font-size: 30px;
+  font-family: 'Oswald', serif;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: -5px;
+}
+.content__video-card-description {
+  font-size: 18px;
+  font-weight: 400;
+  line-clamp: 4;
+}
+.more-button {
+  width: 100%;
+  padding: 6px 0;
+  margin-top: 30px;
+}
+.content__card-link_current {
+  display: block;
+  background-color: #545050;
+}
+.result__video-container,
+.content__list-container {
+  position: relative;
 }

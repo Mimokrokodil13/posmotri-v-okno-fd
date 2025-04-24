@@ -102,7 +102,7 @@ ol {
   width: fit-content;
 }
 
-.search-form__label:focus {
+.search-form__label input:focus {
   outline: none;
 }
 
@@ -114,13 +114,13 @@ ol {
 .search-form__label input {
   width: 225px;
   height: 27px;
-  font-family: 'Fira Sans Condensed', serif;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
-  color: #ffffffb2;
+  color: #ffffff;
   border: none;
   border-top: 1px solid #ffffff;
   border-bottom: 1px solid #ffffff;
-  background-color: #1b1919;
+  background-color: transparent;
   appearance: none;
 }
 
@@ -153,12 +153,13 @@ ol {
 }
 .button {
   color: #ffffff;
-  font-family: 'Fira Sans Condensed', serif;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   font-weight: 700;
-  background-color: #1b1919;
+  background-color: transparent;
   border: 1px solid #ffffff;
   cursor: pointer;
+  height: 34px;
 }
 .button:hover {
   text-decoration: underline;
@@ -172,7 +173,6 @@ ol {
   outline-offset: 2px;
 }
 .search-form__submit-button {
-  height: 34px;
   padding: 6px 73.5px;
   align-self: end;
 }
@@ -192,7 +192,7 @@ ol {
 }
 
 .content__accent {
-  opacity: 20%;
+  color: #545050;
 }
 
 .content__list-container {
@@ -210,32 +210,36 @@ ol {
   padding: 0 3px;
 }
 
-.content__list-item:hover {
+.content__card-link:hover {
   cursor: pointer;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
-.content__list-item:focus-visible {
+.content__card-link:focus-visible {
   outline: 1px solid #ffffff;
   outline-offset: 2px;
 }
 
 .content__card-link {
+  display: block;
   text-decoration: none;
   color: #ffffff;
+}
+
+.content__card-link:active {
+  background-color: #545050;
 }
 
 .content__video-card {
   display: flex;
   align-items: start;
   width: 390px;
-  height: 103px;
 }
 .content__video-card-thumbnail {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  width: 194px;
+  height: 103px;
+  object-fit: cover;
   object-position: right;
 }
 .content__video-card-description-container {
@@ -249,12 +253,16 @@ ol {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-bottom: -5px;
+  line-height: 100%;
 }
 .content__video-card-description {
   font-size: 18px;
   font-weight: 400;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
   line-clamp: 4;
+  overflow: hidden;
 }
 .more-button {
   width: 100%;
